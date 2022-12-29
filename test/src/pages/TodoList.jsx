@@ -1,3 +1,4 @@
+import TodoItem from "../components/TodoItem";
 import { useTodoStore } from "../stores/todo";
 
 function TodoList() {
@@ -5,11 +6,10 @@ function TodoList() {
   const addItem = useTodoStore((state) => state.addItem);
   const clearList = useTodoStore((state) => state.clearList);
 
-  
   return (
     <article>
       {todoList.map((item) => {
-        return <p>{item.title}</p>;
+        return <TodoItem title={item.title} />;
       })}
       <button
         onClick={() => {
